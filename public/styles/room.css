@@ -1,0 +1,143 @@
+.main {
+  background: #155475;
+}
+#game {
+  margin: 0px 0px;
+  padding: 0px 0px;
+  display: none;
+}
+#room {
+  margin: 0px auto;
+  padding: 0px 0px;
+  width: 1000px;
+  height: 500px;
+}
+.roomSite {
+  width: 240px;
+  height: 300px;
+  margin: 100px 0px;
+  float: left;
+  background: url("/images/site.png") no-repeat top;
+  position: relative;
+}
+.roomClientInfo {
+  margin: 50px auto;
+  overflow: hidden;
+}
+#readyBtn {
+  width: 55px;
+  position: absolute;
+  top: 330px;
+  left: 90px;
+}
+.ready {
+  display: none;
+  margin: 30px auto;
+  font-size: 20px;
+  position: absolute;
+  top: -70px;
+  left: 90px;
+}
+.ceil {
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+}
+.ceil img {
+  width: 73px;
+  height: 73px;
+  margin: auto auto;
+}
+.site {
+  width: 320px;
+  height: 165px;
+  position: absolute;
+  border: solid #FFF 2px;
+}
+#site0 {
+  top: 20px;
+  left: 50px;
+}
+#site1 {
+  top: 20px;
+  left: 970px;
+}
+#site2 {
+  top: 360px;
+  left: 970px;
+}
+#site3 {
+  top: 360px;
+  left: 50px;
+}
+.clientInfo {
+  margin: 5px 15px;
+  height: 71px;
+  width: 160px;
+  float: right;
+  overflow: hidden;
+}
+.clientInfo img {
+  float: left;
+}
+.pocket div {
+  float: left;
+  width: 75px;
+  height: 75px;
+}
+.pocket img {
+  width: 72px;
+  height: 72px;
+}
+.pocketCard {
+  margin: 2px 2px 2px 2px;
+}
+.enablePool {
+  border: solid #FF0 5px;
+  margin: 0px auto;
+}
+.disablePool {
+  margin: 0px auto;
+  border: solid #155475 5px;
+}
+.enableCell {
+  cursor: pointer;
+}
+.selectedCell {
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+}
+.selectedCell img {
+  width: 73px;
+  height: 73px;
+  margin: auto auto;
+}
+.curSite {
+  border: solid #F00 2px;
+}
+.unopenPktCard {
+  margin: 2px 2px 2px 2px;
+}
+.openedPktCard {
+  margin: 2px 2px 2px 2px;
+}
+.enablePktCard {
+  cursor: pointer;
+  border: solid #FF0 2px;
+  margin: 0px 0px 0px 0px;
+}
+.timer {
+  float: left;
+  height: 80px;
+  width: 80px;
+  font-size: 50px;
+}
+#observe {
+  position: absolute;
+  top: -30px;
+  left: 420px;
+  font-size: 25px;
+  display: none;
+  color: #FF0;
+}

@@ -1,0 +1,21 @@
+<link href="/styles/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+  $(document).ready(function(){
+    if("<%- user.screen_name%>" != ""){
+      $('#login').hide();
+      $('#logout').show();
+    }
+    else{
+      $('#login').show();
+      $('#logout').hide();
+    }
+  });
+</script>
+<div class="introduce">
+</div>
+<a id="enterHall" href="/hall">
+  <img src="/images/enterHall.png" alt="进入游戏大厅" />
+</a>
+<div id="ad">
+  一个考验你记忆力和运气的游戏^_^
+</div>

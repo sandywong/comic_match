@@ -1,0 +1,5 @@
+{
+    "name" : "comicMatch",
+    "main" : "./server.js"
+}
+

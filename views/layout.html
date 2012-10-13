@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><%= config.site_name %></title>
+<link href="/styles/reset.css" rel="stylesheet" type="text/css" />
+<link href="/styles/layout.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/scripts/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+  function showAbout(){
+    if($('#aboutDiv').length <= 0){
+      $('.page').append("<div id=\"aboutUnder\"></div>");
+      $('.page').append("<div id=\"aboutWrapper\"><div id=\"aboutDiv\"></div></div>");
+      $('#aboutDiv').append("<div id=\"aboutClose\" onclick=\"closeAbout()\">关闭</div>");
+      $('#aboutDiv').append("<div id=\"aboutContent\"></div>");
+      $('#aboutContent').html("<p>游戏名称： Comic Match</p><p>版本： 1.0</p><p>游戏规则：</p><p style=\"text-align:center;\"><img src=\"/images/default.jpg\" alt=\"\" /></p><p>开发者： <a href=\"http://cnblogs.com/sandywong\" target=\"_blank\">黄聪</a></p><p>联系我请在新浪微博@<a href=\"http://weibo.com/sandyisswallow\" target=\"_blank\">燕子是也</a>，或者发私信给我^_^</p>");
+    }
+    else{
+      $('#aboutUnder').show();
+      $('#aboutWrapper').show();
+    }
+  }
+  function closeAbout(){
+    $('#aboutUnder').hide();
+    $('#aboutWrapper').hide();
+  }
+</script>
+</head>
+<body>
+<div class="page">
+  <div class="head">
+    <div id="logo">
+      <a href="/">Comic<span>Match</span></a>
+    </div>
+    <div id="navigation">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/hall">游戏大厅</a></li>
+        <li><a onclick="showAbout();" class="about">关于<a></li>
+      </ul>
+    </div>
+    <div id="headUser">
+    <% if(user.screen_name){ %>
+      您好！
+      <img id="userImage" src="<%- user.profile_image_url %>" />
+      <a href="<%- user.t_url %>" target="_blank"><%= user.screen_name %></a> ，
+      <a href="/logout">退出登录</a>
+    <% } else { %>
+      <a href="/login?type=weibo">
+        <img src="http://open.sinaimg.cn/wikipic/button/24.png" alt="登录" />
+      </a>
+    <% } %>
+    </div>
+  </div>
+  <div class="main">
+  <%- body %>
+  </div>
+  <div class="foot">
+    Copyright&copy; <%= config.site_name %>&nbsp;&nbsp;&nbsp;&nbsp;by <a href="<%- config.weibo %>" target="_blank"><%= config.author %></a>
+  </div>
+</div>
+</body>
+</html>

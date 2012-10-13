@@ -1,0 +1,83 @@
+<link href="/styles/room.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+  var CONFIG = {
+    id: <%= id %>,
+    site: 4,
+    last_message_time: <%- startTime %>,
+    siteNum: 4,
+    mySite: 2,
+    isGameStart: <%- isGameStart %>,
+    roomId: <%= roomId %>,
+    cardNum: <%- selfNum %>
+  };
+  $(document).ready(function(){
+    $('#pocket'+CONFIG.mySite+' div').removeClass('pocketCard');
+    $('#pocket'+CONFIG.mySite+' div').addClass('unopenPktCard');
+    <% if(isGameStart == true){ %>
+      $('#room').hide();
+      $('#game').show();
+      <% for(var i = 0; i < 4; i++){ %>
+      $('#client' + calculateShowSite(<%- i %>)).html("<img src=\""
+        + "<%= sessions[i].image %>" + "\" /><p><a href=\"" + "<%= sessions[i].url %>"
+        + "\"target=\"_blank\"><%= sessions[i].name %></a></p><p><%= sessions[i].location %></p>");
+        <% for(var j = 0; j < selfNum; j++){ %>
+          <% if(isPersonalCardsOpen[i][j] == true){ %>
+          $('#card' + calculateShowSite(<%- i %>) + '_' + <%- j %>).html("<img src=\"/images/" + <%- personalCards[i][j] %> + ".jpg\" alt=\"" + <%- personalCards[i][j] %> + "\" />");
+          <% } %>
+        <% } %>
+      <% } %>
+      <% for(var i = 0; i < sideNum; i++){ %>
+        <% for(var j = 0; j < sideNum; j++){ %>
+          <% if(isPoolCardsOpen[i][j] == true){ %>
+          var ceilId = '#ceil' + <%- i %> + '_' + <%- j %>;
+          $(ceilId).html("<img src=\"/images/" + <%- poolCards[i][j] %> + ".jpg\" alt=\"" + <%- poolCards[i][j] %> + "\" />");
+          $(ceilId).removeClass('ceil');
+          $(ceilId).addClass('selectedCell');
+          <% } %>
+        <% } %>
+      <% } %>
+    <% }else{ %>
+      $('#room').show();
+      $('#game').hide();
+    <% } %>
+  });
+</script>
+<script type="text/javascript" src="/scripts/client.js"></script>
+<div id="room">
+  <% for(var i = 0; i < 4; i++){ %>
+  <div id="roomSite<%- i %>" class="roomSite">
+    <div id="roomClient<%- i %>" class="roomClientInfo">
+    </div>
+  </div>
+  <% } %>
+</div>
+<div id="game">
+  <div id="sites">
+    <% for(var i = 0; i < 4; i++){ %>
+    <div id="site<%- i %>" class="site">
+      <div id="timer<%- i %>" class="timer">
+      </div>
+      <div id="client<%- i %>" class="clientInfo">client<%- i %></div>
+      <div id="pocket<%- i %>" class="pocket">
+        <% for(var j = 0; j < selfNum; j++){ %>
+        <div id="card<%- i %>_<%- j %>" class="pocketCard">
+          <img src="/images/default.jpg" />
+        </div>
+        <% } %>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <table id="pool" class="disablePool">
+    <% for(var i = 0; i < sideNum; i++){ %>
+    <tr>
+      <% for(var j = 0; j < sideNum; j++){ %>
+      <td id="ceil<%- i %>_<%- j %>" class="ceil">
+        <img src="/images/default.jpg" />
+      </td>
+      <% } %>
+    </tr>
+    <% } %>
+  </table>
+</div>
+<div id="observe">旁观中</div>

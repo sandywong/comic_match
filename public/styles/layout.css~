@@ -1,0 +1,141 @@
+body {
+  padding: 0px;
+}
+a {
+  color:  #ffcf00;
+}
+.page {
+  background-color: #07496c;
+}
+.head {
+  height: 55px;
+  margin: auto;
+  background-color: #07496c;
+}
+.main {
+  width: auto;
+  height: 545px;
+  margin: 0px auto;
+  text-align: center;
+  position: relative;
+  color: white;
+  background: url(/images/bg.png) white;
+}
+.foot {
+  height: 23px;
+  text-align: center;
+  border-top: solid black 2px;
+  background-color: #e3ebee;
+  padding: 2px;
+}
+.foot a {
+  color: #376ea6;
+}
+#logo {
+  float: left;
+  width: 200px;
+  position: relative;
+  left: 10%;
+}
+#logo a {
+  text-decoration: none;
+  color: #377696;
+  font-size: 35px;
+}
+#logo a span {
+  color: white;
+}
+#navigation {
+  height: 33px;
+  float: right;
+  margin-top: 10px;
+  position: relative;
+  left: -42%;
+
+}
+#navigation ul {
+  height: 33px;
+  line-height: 33px;
+  margin: 0;
+  display: inline;
+  float: left;
+  margin-left: 20px;
+  padding-right: 0;
+}
+#navigation ul li{
+  display: inline;
+  float: left;
+  color: white;
+  font-size: 15px;
+  padding: 0 6px 0 6px;
+}
+#navigation ul li a:link, #navigation ul li a:visited {
+  display: inline;
+  float: left;
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  margin-right: 1px;
+  padding: 0 15px 0 15px;
+  background: url(/images/nav-divide.gif) right 15px no-repeat;
+}
+.about, .about:hover {
+  color: white;
+  cursor: pointer;
+}
+#headUser {
+  float: right;
+  color: white;
+  font-size: 15px;
+  margin-top: 12px;
+  position: relative;
+  left: 8%;
+}
+#userImage {
+  width: 28px;
+  height: 28px;
+}
+#aboutUnder {
+  width: 100%;
+  height: 100%;
+  background: #CCC;
+  position: absolute;
+  top: 0px;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+#aboutWrapper {
+  width: 100%;
+  position: absolute;
+  top: 100px;
+}
+#aboutDiv {
+  width: 400px;
+  height: 100%;
+  margin: 0px auto;
+  background: white;
+}
+#aboutClose {
+  height: 20px;
+  background: #567cb2;
+  cursor: pointer;
+  text-align: right;
+  color: white;
+  font: 15px/1.5 Arial, sans-serif;
+  padding: 5px;
+}
+#aboutContent {
+  height: 200px;
+  overflow: hidden;
+  padding: 10px;
+  font: 15px/1.5 Arial, 微软雅黑;
+  background: #e3ebee;
+}
+#aboutContent a {
+  color: blue;
+}
+#aboutContent img {
+  margin: 0px auto;
+}

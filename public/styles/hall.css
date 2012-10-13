@@ -1,0 +1,34 @@
+.main {
+  background: url(/images/hall_bg.jpg) top left no-repeat #196589;
+}
+#rooms {
+  overflow: auto;
+  height: 450px;
+  width: 700px;
+  margin: 0px auto;
+  position: relative;
+  top: 40px;
+  text-align: left;
+  border: solid white 1px;
+}
+.room {
+  height: 80px;
+  background: url(/images/roomDivide.png) left;
+  font-size: 20px;
+}
+.roomNum {
+  float: left;
+}
+.roomState {
+  float: right;
+  position: relative;
+  top: 35px;
+}
+.curNum {
+  float: right;
+  position: relative;
+  top: 35px;
+}
+.enableRoom {
+  cursor: pointer;
+}

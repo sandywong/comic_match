@@ -1,0 +1,29 @@
+<script type="text/javascript">
+  var CONFIG = {
+    last_message_time: <%- timestamp %>,
+    SITE_NUM: 4
+  };
+  $(document).ready(function(){
+    
+  });
+</script>
+<script type="text/javascript" src="/scripts/hall.js"></script>
+<link href="/styles/hall.css" rel="stylesheet" type="text/css" />
+<div id="rooms">
+  <% for(var i = 0; i < 40; i++){ %>
+  <div id="room<%- i %>" class="room">
+    <div class="roomNum">第<%- i+1 %>号房间</div>
+    <% if(isGameStart[i] == false){ %>
+    <div id="roomState<%- i %>" class="roomState">等待中</div>
+      <% if(curNum[i] < 4){ %>
+      <div id="curNum<%- i %>" class="curNum">还缺<%- (4-curNum[i]) %>人，</div>
+      <% }else{ %>
+      <div id="curNum<%- i %>" class="curNum">满座，</div>
+      <% } %>
+    <% }else{ %>
+    <div id="roomState<%- i %>" class="roomState">游戏中</div>
+    <div id="curNum<%- i %>" class="curNum"></div>
+    <% } %>
+  </div>
+  <% } %>
+</div>
